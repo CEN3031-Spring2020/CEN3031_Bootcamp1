@@ -18,20 +18,23 @@ Node is well known for its ability to run code **asynchronously**.  This means t
 This is a simple server that responds to all requests with the text `Request received!`.
 
 ```javascript
-var http = require('http'); 
-var port = 8080; 
+// NOTE: For import statements you must be running node (on version 12) with the --experimental-modules flag and have the "type": "module" field listed in package.json
+// If you choose not to add this flag you should use `const http = require('http');`
+import * as http from 'http';
+ 
+const port = 8080; 
 
-var requestHandler = function(request, response) {
+const requestHandler = (request, response) => {
   response.end('Request received!');
 };
 
 // a server is created, but not started
-var server = http.createServer(requestHandler);
+const server = http.createServer(requestHandler);
 
 // the server is now started, listening for requests on port 8080
-server.listen(port, function() {
+server.listen(port, () => {
   //once the server is listening, this callback function is executed
-  console.log('Server listening on: http://127.0.0.1:' + port);
+  console.log(`Server listening on: http://127.0.0.1: ${port}`);
 });
 console.log('Is the server started?');
 ```
@@ -39,8 +42,8 @@ Which log statement do you expect to be printed first? Answer this, then type th
 
 `Is the server started?` gets printed first is because the call to `server.listen()` is asynchronous in nature. While server.listen() is not finished, the control flow gets passed to the next line of the program. Once server.listen() is finished, it executes the *callback*, defined by the anonymous function: 
 ```javascript
-function() {
-    console.log('Server listening on: http://127.0.0.1:' + port);
+() => {
+    console.log(`Server listening on: http://127.0.0.1: ${port}`);
 }
 ```
 Before continuing to the assignment, [these](http://www.theprojectspot.com/tutorial-post/Node-js-for-beginners-part-1-hello-world/2) [two](http://www.theprojectspot.com/tutorial-post/nodejs-for-beginners-callbacks/4) tutorials will help you further understand how Node is used to create servers and the nature of callback functions. 
@@ -50,7 +53,7 @@ As you may imagine, the utility of the above server is quite low, since it has n
 ## Assignment
 Your objective is to create a server that provides listing data from a JSON file. To accomplish this, you will: 
 - use the File System module (fs) to load `listings.json` into memory  
-- create a request handler with the URL module to send the listing data on a GET request to `localhost:8080/listings`
+- create a request handler with the URL module to send the listing data on a GET request to `localhost:5000/listings`
 - use the HTTP module to create a server that makes use of this request handler
 
 We have provided skeleton code that will help guide you in completing this assignment. 
