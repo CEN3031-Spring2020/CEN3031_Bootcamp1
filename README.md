@@ -62,7 +62,7 @@ There is also a file named `server.tests.js` containing unit tests to test your 
 
 # Instructions: 
 
-1. Make sure you have [Node.js](https://nodejs.org/en/) installed
+1. Make sure you have [Node.js](https://nodejs.org/en/) installed. Please install the "Current" version and not the "LTS" version.
 2. Clone this repository and then navigate to it on your local machine's terminal 
   See Link for details on how to clone repository - (https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)
 3. Install the mocha testing framework with the command `npm install -g mocha`
