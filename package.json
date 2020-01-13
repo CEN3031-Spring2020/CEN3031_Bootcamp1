@@ -5,8 +5,8 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "test": "mocha server.test.js",
-    "start": "node --experimental-modules server.js"
+    "test": "mocha -r @std/esm server.test.js",
+    "start": "node -r @std/esm server.js"
   },
   "author": "Medhir Bhargava",
   "license": "MIT",
@@ -14,7 +14,8 @@
     "should": "^7.1.1"
   },
   "dependencies": {
-    "mocha": "^7.0.0",
-    "request": "^2.67.0"
+    "mocha": "7.0.0-esm1",
+    "request": "^2.67.0",
+    "@std/esm": "^0.26.0"
   }
 }

@@ -2,7 +2,7 @@ import * as http from 'http';
 import * as fs from 'fs';
 import * as url from 'url';
 
-const port = 8080;
+const port = 5000;
 
 /* Global variables */
 let listingData, server;
@@ -24,6 +24,7 @@ const requestHandler = (request, response) => {
 
       HINT: Explore the list of MIME Types
       https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types
+
      */
 };
 
@@ -47,6 +48,5 @@ fs.readFile('listings.json', 'utf8', (err, data) => {
     // Creates the server
 
     // Start the server
-
 
 });

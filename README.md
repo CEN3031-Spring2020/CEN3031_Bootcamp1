@@ -18,11 +18,9 @@ Node is well known for its ability to run code **asynchronously**.  This means t
 This is a simple server that responds to all requests with the text `Request received!`.
 
 ```javascript
-// NOTE: For import statements you must be running node (on version 12) with the --experimental-modules flag and have the "type": "module" field listed in package.json
-// If you choose not to add this flag you should use `const http = require('http');`
 import * as http from 'http';
  
-const port = 8080; 
+const port = 5000; 
 
 const requestHandler = (request, response) => {
   response.end('Request received!');
@@ -31,7 +29,7 @@ const requestHandler = (request, response) => {
 // a server is created, but not started
 const server = http.createServer(requestHandler);
 
-// the server is now started, listening for requests on port 8080
+// the server is now started, listening for requests on port 5000
 server.listen(port, () => {
   //once the server is listening, this callback function is executed
   console.log(`Server listening on: http://127.0.0.1: ${port}`);
