@@ -8,7 +8,14 @@
     "test": "mocha server.test.js",
     "start": "node server.js"
   },
-  "author": "Medhir Bhargava",
+  "authors": [
+    {
+      "name": "Jonathan Conlin"
+    },
+    {
+      "name": "Medhir Bhargava"
+    }
+  ],
   "license": "MIT",
   "devDependencies": {
     "should": "^7.1.1"
